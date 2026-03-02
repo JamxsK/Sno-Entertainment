@@ -1,16 +1,19 @@
 :root{
   --bg:#07070b;
   --panel:#0e0e16;
-  --panel2:#0b0b12;
   --text:#f2f2f5;
   --muted:#b2b2bf;
   --border:rgba(255,255,255,.10);
   --shadow: 0 18px 50px rgba(0,0,0,.55);
   --radius:18px;
 
-  /* Accent placeholders (we’ll match YouTube palette later) */
+  /* Accent placeholders (optional later) */
   --accent:#7c5cff;
   --accent2:#22c55e;
+
+  /* Watermark controls */
+  --wm-size: 520px;
+  --wm-opacity: 0.065;
 }
 
 *{box-sizing:border-box}
@@ -19,13 +22,14 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   color:var(--text);
   background:
-    radial-gradient(1200px 600px at 10% 0%, rgba(124,92,255,.18), transparent 55%),
-    radial-gradient(900px 500px at 90% 10%, rgba(34,197,94,.10), transparent 50%),
+    radial-gradient(1200px 600px at 10% 0%, rgba(124,92,255,.14), transparent 55%),
+    radial-gradient(900px 500px at 90% 10%, rgba(34,197,94,.08), transparent 50%),
     linear-gradient(180deg, #050508 0%, #07070b 50%, #06060a 100%);
   line-height:1.5;
+  position:relative;
 }
 
-/* gritty texture */
+/* subtle gritty texture */
 body::before{
   content:"";
   position:fixed;
@@ -36,7 +40,22 @@ body::before{
     radial-gradient(circle at 80% 30%, rgba(255,255,255,.02) 0 1px, transparent 1px);
   background-size: 18px 18px, 22px 22px;
   mix-blend-mode: overlay;
-  opacity:.35;
+  opacity:.28;
+}
+
+/* logo watermark background (uses blending to “remove” black visually) */
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image: url("assets/logo.jpg");
+  background-repeat: repeat;
+  background-size: var(--wm-size) var(--wm-size);
+  background-position: center;
+  opacity: var(--wm-opacity);
+  filter: grayscale(100%) contrast(110%);
+  mix-blend-mode: screen;         /* this is the key */
 }
 
 a{color:inherit; text-decoration:none}
@@ -45,25 +64,45 @@ a{color:inherit; text-decoration:none}
 .topbar{
   position:sticky; top:0; z-index:100;
   backdrop-filter: blur(10px);
-  background: rgba(7,7,11,.70);
+  background: rgba(7,7,11,.80);
   border-bottom:1px solid var(--border);
 }
+
 .nav{
   display:flex; align-items:center; justify-content:space-between;
   padding:14px 0;
   gap:12px;
 }
-.brand{display:flex; align-items:center; gap:10px}
-.brand-mark{
-  width:12px; height:12px; border-radius:999px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow: 0 0 0 6px rgba(124,92,255,.10);
-}
-.brand-text{display:flex; flex-direction:column; line-height:1.1}
-.brand-name{font-weight:800; letter-spacing:.2px}
-.brand-sub{font-size:12px; color:var(--muted); font-weight:700}
 
-/* links */
+/* centered header brand layout */
+.nav-centered{
+  display:grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items:center;
+}
+
+/* brand */
+.brand-centered{
+  justify-self:center;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.brand-logo{
+  width:34px;
+  height:34px;
+  object-fit:contain;
+  mix-blend-mode: screen;         /* helps the black disappear */
+  filter: drop-shadow(0 10px 20px rgba(0,0,0,.35));
+}
+
+.brand-name-only{
+  font-weight:900;
+  letter-spacing:.2px;
+  font-size:15px;
+}
+
 .links{display:flex; align-items:center; gap:10px; flex-wrap:wrap}
 .links a{
   color:var(--muted);
@@ -74,10 +113,9 @@ a{color:inherit; text-decoration:none}
 }
 .links a:hover{color:var(--text); background:rgba(255,255,255,.06)}
 
-/* buttons (slightly larger padding) */
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
-  padding:12px 16px; /* increased */
+  padding:12px 16px;
   border-radius:999px;
   font-weight:800;
   font-size:14px;
@@ -95,7 +133,6 @@ a{color:inherit; text-decoration:none}
 /* Desktop vs mobile nav */
 .links-desktop{display:flex;}
 .menu-btn{
-  display:none;
   width:44px;
   height:44px;
   border-radius:12px;
@@ -171,10 +208,9 @@ a{color:inherit; text-decoration:none}
   text-transform:uppercase;
 }
 
-/* hero title reduced slightly */
 .title{
   margin:10px 0 8px;
-  font-size:44px; /* was 48px */
+  font-size:44px;
   line-height:1.05;
   letter-spacing:-.02em;
 }
@@ -217,16 +253,6 @@ a{color:inherit; text-decoration:none}
 .stat-val{font-size:18px; font-weight:900; margin-top:6px}
 .stat-sub{font-size:13px; color:var(--muted); margin-top:4px}
 
-.logo-slot{margin-top:12px}
-.logo-box{
-  padding:14px;
-  border-radius:14px;
-  border:1px dashed rgba(255,255,255,.18);
-  background:rgba(0,0,0,.18);
-}
-.logo-title{font-weight:900}
-.logo-help{color:var(--muted); font-size:13px; margin-top:6px}
-
 .section{padding:22px 0}
 .section-head{margin-bottom:12px}
 .section-head h2{margin:0 0 6px; font-size:22px}
@@ -250,16 +276,6 @@ a{color:inherit; text-decoration:none}
 .card-top{color:var(--muted); font-size:12px; font-weight:900; letter-spacing:.12em; text-transform:uppercase}
 .card-title{font-size:18px; font-weight:900; margin-top:6px}
 .card-sub{color:var(--muted); margin-top:6px; font-size:14px}
-.card-meta{margin-top:12px; display:flex; gap:8px; flex-wrap:wrap}
-.tag{
-  border:1px solid var(--border);
-  background:rgba(255,255,255,.04);
-  color:var(--muted);
-  border-radius:999px;
-  padding:6px 9px;
-  font-weight:800;
-  font-size:12px;
-}
 .card-actions{margin-top:12px}
 
 .table{padding:12px}
@@ -298,18 +314,6 @@ textarea{min-height:120px; resize:vertical}
 .form-actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
 
 .info{padding:16px}
-.info h3{margin:0 0 8px}
-.info-list{display:flex; flex-direction:column; gap:10px}
-.info-item{
-  display:flex; justify-content:space-between; gap:10px;
-  padding:10px;
-  border-radius:14px;
-  border:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.03)
-}
-.info-label{color:var(--muted); font-weight:900; font-size:12px; letter-spacing:.08em; text-transform:uppercase}
-.info-value{text-decoration:underline; font-weight:800}
-
 .divider{height:1px; background:rgba(255,255,255,.10); margin:14px 0}
 
 .muted{color:var(--muted)}
@@ -321,21 +325,38 @@ textarea{min-height:120px; resize:vertical}
   border-top:1px solid var(--border);
   padding-top:16px
 }
+.footer-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.footer-logo{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+  mix-blend-mode: screen;
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
+}
 
 @media (max-width: 900px){
+  :root{
+    --wm-size: 360px;
+    --wm-opacity: 0.055;
+  }
+
   .hero-grid{grid-template-columns:1fr}
   .grid-2{grid-template-columns:1fr}
   .grid-3{grid-template-columns:1fr}
 
-  /* hero title slightly smaller on mobile */
   .title{font-size:34px;}
 
   .table-row{grid-template-columns: 1fr; gap:6px}
 
-  /* Mobile nav behavior */
   .links-desktop{display:none;}
-  .menu-btn{display:inline-flex; align-items:center; justify-content:center;}
 
-  /* Hide secondary stats on mobile */
   .stat.secondary{display:none;}
+
+  .nav-centered{
+    grid-template-columns: 44px 1fr 0;
+  }
 }
