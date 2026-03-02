@@ -52,7 +52,7 @@ form.addEventListener("submit", (e) => {
   const service = document.getElementById("service").value.trim();
   const details = document.getElementById("details").value.trim();
 
-  const to = "youremail@example.com"; // <-- change later
+  const to = "youremail@example.com"; // change later
   const subject = encodeURIComponent(`Sno Ent Booking: ${service}`);
   const body = encodeURIComponent(
     `Name: ${name}\nEmail: ${email}\nService: ${service}\n\nDetails:\n${details}\n`
