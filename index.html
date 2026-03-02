@@ -6,283 +6,161 @@
   <title>Sno Entertainment | Merch • Events • Mixing/Mastering</title>
   <meta name="description" content="Sno Entertainment — merch, events, and professional mixing/mastering by TstudioTM." />
   <meta name="theme-color" content="#0b0b10" />
-
-  <meta property="og:title" content="Sno Entertainment" />
-  <meta property="og:description" content="Merch • Events • Mixing/Mastering (TstudioTM) • Music" />
-  <meta property="og:type" content="website" />
-
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="container nav">
-      <!-- Brand (old roomy layout) -->
-      <a class="brand" href="#top" aria-label="Sno Entertainment Home">
-        <img class="brand-logo" src="assets/logo.png" alt="Sno Entertainment logo" />
-        <span class="brand-name">Sno Entertainment</span>
-      </a>
 
-      <!-- Desktop nav -->
-      <nav class="links links-desktop" aria-label="Primary navigation">
-        <a href="#music">Music</a>
-        <a href="#merch">Merch</a>
-        <a href="#events">Events</a>
-        <a href="#services">Mix/Master</a>
-        <a class="btn btn-primary" href="#booking">Book</a>
-      </nav>
+<header class="topbar">
+  <div class="container nav">
 
-      <!-- Mobile hamburger -->
-      <button
-        class="menu-btn"
-        id="menuBtn"
-        type="button"
-        aria-label="Open menu"
-        aria-controls="mobileMenu"
-        aria-expanded="false">
-        <span class="menu-icon" aria-hidden="true"></span>
-      </button>
+    <!-- Brand -->
+    <a class="brand" href="#top">
+      <img class="brand-logo" src="assets/logo.jpeg" alt="Sno Entertainment logo">
+      <span class="brand-name">Sno Entertainment</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="links links-desktop">
+      <a href="#music">Music</a>
+      <a href="#merch">Merch</a>
+      <a href="#events">Events</a>
+      <a href="#services">Mix/Master</a>
+      <a class="btn btn-primary" href="#booking">Book</a>
+    </nav>
+
+    <!-- Hamburger -->
+    <button class="menu-btn" id="menuBtn">
+      <span class="menu-icon"></span>
+    </button>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <div class="mobile-menu-inner">
+      <a href="#music" class="mobile-link">Music</a>
+      <a href="#merch" class="mobile-link">Merch</a>
+      <a href="#events" class="mobile-link">Events</a>
+      <a href="#services" class="mobile-link">Mix/Master</a>
+      <a href="#booking" class="btn btn-primary mobile-cta">Book</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div class="panel hero-left">
+      <p class="kicker">Hmong Rap Collective • Merch • Events • Studio Services</p>
+      <h1 class="title">Sno Entertainment</h1>
+      <p class="lead">
+        Official home for releases, upcoming shows, and professional mixing/mastering by <b>TstudioTM</b>.
+      </p>
+
+      <div class="cta">
+        <a class="btn btn-primary" href="#merch">Shop Merch</a>
+        <a class="btn" href="#music">Listen</a>
+        <a class="btn" href="#booking">Get a Quote</a>
+      </div>
     </div>
 
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobileMenu" hidden>
-      <div class="mobile-menu-inner">
-        <a href="#music" class="mobile-link">Music</a>
-        <a href="#merch" class="mobile-link">Merch</a>
-        <a href="#events" class="mobile-link">Events</a>
-        <a href="#services" class="mobile-link">Mix/Master</a>
-        <a href="#booking" class="btn btn-primary mobile-cta">Book</a>
+    <div class="panel hero-right">
+      <div class="stat-grid">
+        <div class="stat">
+          <div class="stat-top">Brand</div>
+          <div class="stat-val">Sno Entertainment</div>
+          <div class="stat-sub">Collective releases + shows</div>
+        </div>
+        <div class="stat">
+          <div class="stat-top">Engineer</div>
+          <div class="stat-val">TstudioTM</div>
+          <div class="stat-sub">Mixing & mastering</div>
+        </div>
       </div>
     </div>
-  </header>
 
-  <main id="top">
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="panel hero-left">
-          <p class="kicker">Hmong Rap Collective • Merch • Events • Studio Services</p>
-          <h1 class="title">Sno Entertainment</h1>
-          <p class="lead">
-            Official home for releases, upcoming shows, and professional mixing/mastering by <b>TstudioTM</b>.
-          </p>
+  </div>
+</section>
 
-          <div class="cta">
-            <a class="btn btn-primary" href="#merch">Shop Merch</a>
-            <a class="btn" href="#music">Listen</a>
-            <a class="btn" href="#booking">Get a Quote</a>
-          </div>
+<!-- MUSIC -->
+<section id="music" class="section">
+  <div class="container">
+    <h2>Music</h2>
 
-          <div class="badges">
-            <span class="badge">Street / gritty</span>
-            <span class="badge">Remote mix + master</span>
-            <span class="badge">Drops & events</span>
-          </div>
-        </div>
-
-        <div class="panel hero-right">
-          <div class="stat-grid">
-            <div class="stat">
-              <div class="stat-top">Brand</div>
-              <div class="stat-val">Sno Entertainment</div>
-              <div class="stat-sub">Collective releases + shows</div>
-            </div>
-            <div class="stat">
-              <div class="stat-top">Engineer</div>
-              <div class="stat-val">TstudioTM</div>
-              <div class="stat-sub">Mixing & mastering</div>
-            </div>
-
-            <div class="stat secondary">
-              <div class="stat-top">Bookings</div>
-              <div class="stat-val">Open</div>
-              <div class="stat-sub">Remote or local</div>
-            </div>
-            <div class="stat secondary">
-              <div class="stat-top">Focus</div>
-              <div class="stat-val">Merch + Events</div>
-              <div class="stat-sub">Plus clients/listeners</div>
-            </div>
-          </div>
-        </div>
+    <div class="grid-2">
+      <div class="panel embed">
+        <iframe
+          src="https://www.youtube.com/embed/9uWh2ne8BZs"
+          allowfullscreen></iframe>
       </div>
-    </section>
 
-    <!-- MUSIC -->
-    <section id="music" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Music</h2>
-          <p>Latest releases from the channel.</p>
-        </div>
-
-        <div class="grid-2">
-          <div class="panel embed">
-            <iframe
-              src="https://www.youtube.com/embed/9uWh2ne8BZs"
-              title="Latest Release 1"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
-
-          <div class="panel embed">
-            <iframe
-              src="https://www.youtube.com/embed/HcExzNoGyeQ"
-              title="Latest Release 2"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-          </div>
-        </div>
-
-        <div class="row-actions">
-          <a class="btn" href="https://www.youtube.com/@JonSno" target="_blank" rel="noreferrer">View YouTube Channel</a>
-        </div>
+      <div class="panel embed">
+        <iframe
+          src="https://www.youtube.com/embed/HcExzNoGyeQ"
+          allowfullscreen></iframe>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- MERCH (beats/kits removed) -->
-    <section id="merch" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Merch</h2>
-          <p>Store setup coming soon (Shopify + Printful recommended).</p>
-        </div>
+<!-- MERCH -->
+<section id="merch" class="section">
+  <div class="container">
+    <h2>Merch</h2>
 
-        <div class="grid-2">
-          <div class="panel card">
-            <div class="card-top">Featured Drop</div>
-            <div class="card-title">Sno Hoodie (Placeholder)</div>
-            <div class="card-sub">Swap with real product photo + price later.</div>
-            <div class="card-actions">
-              <a class="btn btn-primary" href="#" aria-disabled="true">Coming Soon</a>
-            </div>
-          </div>
-
-          <div class="panel card">
-            <div class="card-top">Apparel</div>
-            <div class="card-title">Tees / Hats</div>
-            <div class="card-sub">On-demand fulfillment (no inventory).</div>
-            <div class="card-actions">
-              <a class="btn" href="#" aria-disabled="true">Coming Soon</a>
-            </div>
-          </div>
-        </div>
+    <div class="grid-2">
+      <div class="panel card">
+        <div class="card-title">Sno Hoodie (Placeholder)</div>
+        <a class="btn btn-primary">Coming Soon</a>
       </div>
-    </section>
 
-    <!-- EVENTS -->
-    <section id="events" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Events</h2>
-          <p>Upcoming shows will be posted here.</p>
-        </div>
-
-        <div class="panel table">
-          <div class="table-row table-head">
-            <div>Date</div><div>City</div><div>Venue</div><div>Link</div>
-          </div>
-
-          <div class="table-row">
-            <div>MM/DD/YYYY</div><div>City, ST</div><div>Venue Name</div><div><span class="muted">TBA</span></div>
-          </div>
-        </div>
+      <div class="panel card">
+        <div class="card-title">Tees / Hats</div>
+        <a class="btn">Coming Soon</a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- SERVICES -->
-    <section id="services" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Mixing & Mastering (TstudioTM)</h2>
-          <p>Pricing can be added later without changing layout.</p>
-        </div>
+<!-- SERVICES -->
+<section id="services" class="section">
+  <div class="container">
+    <h2>Mixing & Mastering (TstudioTM)</h2>
 
-        <div class="grid-3">
-          <div class="panel card">
-            <div class="card-top">Mixing</div>
-            <div class="card-title">Full Mix</div>
-            <div class="card-sub">Modern rap vocal clarity, punch, space, balance.</div>
-            <div class="card-actions">
-              <a class="btn btn-primary" href="#booking">Request Quote</a>
-            </div>
-          </div>
-
-          <div class="panel card">
-            <div class="card-top">Mastering</div>
-            <div class="card-title">Streaming Master</div>
-            <div class="card-sub">Competitive loudness + good translation.</div>
-            <div class="card-actions">
-              <a class="btn" href="#booking">Request Quote</a>
-            </div>
-          </div>
-
-          <div class="panel card">
-            <div class="card-top">Add-on</div>
-            <div class="card-title">Vocal Edit</div>
-            <div class="card-sub">Cleanup, timing, tuning as needed.</div>
-            <div class="card-actions">
-              <a class="btn" href="#booking">Request Quote</a>
-            </div>
-          </div>
-        </div>
+    <div class="grid-3">
+      <div class="panel card">
+        <div class="card-title">Full Mix</div>
+        <a class="btn btn-primary" href="#booking">Request Quote</a>
       </div>
-    </section>
 
-    <!-- BOOKING -->
-    <section id="booking" class="section">
-      <div class="container">
-        <div class="section-head">
-          <h2>Booking / Inquiries</h2>
-          <p>For v1 this uses email. Later we can switch to a real form backend.</p>
-        </div>
-
-        <div class="grid-2">
-          <div class="panel form">
-            <form id="bookingForm">
-              <label for="name">Name</label>
-              <input id="name" name="name" placeholder="Your name" required />
-
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" required />
-
-              <label for="service">Service</label>
-              <input id="service" name="service" placeholder="Mix / Master / Vocal Edit" required />
-
-              <label for="details">Details</label>
-              <textarea id="details" name="details" placeholder="Genre, stems, references, deadline, links…"></textarea>
-
-              <div class="form-actions">
-                <button class="btn btn-primary" type="submit">Send Request</button>
-                <a class="btn" id="emailFallback" href="mailto:youremail@example.com">Email Instead</a>
-              </div>
-
-              <p class="muted small">
-                Replace <b>youremail@example.com</b> when you have the booking email.
-              </p>
-            </form>
-          </div>
-
-          <div class="panel info">
-            <h3>Contact</h3>
-            <p class="muted">Add socials later.</p>
-          </div>
-        </div>
+      <div class="panel card">
+        <div class="card-title">Streaming Master</div>
+        <a class="btn" href="#booking">Request Quote</a>
       </div>
-    </section>
 
-    <footer class="footer">
-      <div class="container foot">
-        <div class="footer-left">
-          <img class="footer-logo" src="assets/logo.png" alt="Sno Entertainment logo" />
-          <div class="muted small">© <span id="year"></span> Sno Entertainment. All rights reserved.</div>
-        </div>
-        <div class="muted small">Built by you • GitHub Pages ready</div>
+      <div class="panel card">
+        <div class="card-title">Vocal Edit</div>
+        <a class="btn" href="#booking">Request Quote</a>
       </div>
-    </footer>
-  </main>
+    </div>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container foot">
+    <div class="footer-left">
+      <img class="footer-logo" src="assets/logo.jpeg" alt="Sno Entertainment logo">
+      <span>© 2026 Sno Entertainment</span>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script src="script.js"></script>
 </body>
 </html>
